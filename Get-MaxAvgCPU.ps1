@@ -21,10 +21,8 @@ $DFMdata | % {
 $s = $_.Split("`t")
       $Workbook.ActiveSheet.Cells.Item($row,1).Value2 = $s[0]
       $Workbook.ActiveSheet.Cells.Item($row,2).Value2 = $s[1]
-      $Workbook.ActiveSheet.Cells.Item($row,3).Value2 = $s[1]
 $row++
 }
-# Adding a random comment here
 # Add a chart of the active data
 $objRange=$Worksheet.UsedRange
 $colCharts=$excel.Charts
