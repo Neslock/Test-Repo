@@ -23,7 +23,6 @@ $s = $_.Split("`t")
       $Workbook.ActiveSheet.Cells.Item($row,2).Value2 = $s[1]
 $row++
 }
-# Testinga a change
 # Add a chart of the active data
 $objRange=$Worksheet.UsedRange
 $colCharts=$excel.Charts
