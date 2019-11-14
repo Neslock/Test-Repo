@@ -13,7 +13,6 @@ $DFMData = Get-Content avg_processor_busy.txt
 $excel=New-Object -COM "Excel.Application"
 $excel.Visible=$true
 $excel.Usercontrol=$true
-$Workbook=$excel.Workbooks.add()
 # Add a Worksheet
 $Worksheet=$Workbook.Worksheets.Item(1)
 # Split the DFM data into 2 columns.
@@ -22,8 +21,10 @@ $DFMdata | % {
 $s = $_.Split("`t")
       $Workbook.ActiveSheet.Cells.Item($row,1).Value2 = $s[0]
       $Workbook.ActiveSheet.Cells.Item($row,2).Value2 = $s[1]
+      $Workbook.ActiveSheet.Cells.Item($row,3).Value2 = $s[1]
 $row++
 }
+# Adding a random comment here
 # Add a chart of the active data
 $objRange=$Worksheet.UsedRange
 $colCharts=$excel.Charts
